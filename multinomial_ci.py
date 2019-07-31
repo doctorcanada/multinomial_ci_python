@@ -83,6 +83,8 @@ def truncpoi(c,x,n,k):
     return probn*probx*f/np.sqrt(s2)
 # end def truncpoi(c,x,n,k)
     
+# TODO: Need to add the code for the "verbose output"
+#       (will adapt from the MultinomialCI R package ASAP)
 def sison(x,alpha,verbose=False):
     n = int(sum(filter(None,x))) 
     k = len(x)             
