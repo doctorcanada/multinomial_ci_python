@@ -2,12 +2,18 @@
 """
 multinomial_ci.py
 
-This is a Python implementation of the Sison-Glaz procedure for constructing
+This is a Python implementation of the Sison-Glaz (1995) procedure for constructing
 simultaneous confidence intervals for multinomial proportions. It is more
 or less a direct translation of the source code used to implement the
 "MultinomialCI" R package (source code: https://github.com/cran/MultinomialCI),
 which itself was a R-based implementation of a SAS package coded by
-May and Johnson (see https://www.jstatsoft.org/article/view/v005i06). 
+May and Johnson (see https://www.jstatsoft.org/article/view/v005i06).
+
+Original source:
+----------------
+Cristina P. Sison & Joseph Glaz (1995) Simultaneous Confidence Intervals and Sample 
+   Size Determination for Multinomial Proportions, Journal of the American Statistical 
+   Association, 90:429, 366-369, DOI: 10.1080/01621459.1995.10476521
 
 PLEASE NOTE THAT THE R PACKAGE HAS A MINOR BUG, which I will be reporting
 to the owner of the above GitHub repo. 
