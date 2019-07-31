@@ -1,8 +1,19 @@
 # -*- coding: utf-8 -*-
 """
-Spyder Editor
+multinomial_ci.py
 
-This is a temporary script file.
+This is a Python implementation of the Sison-Glaz procedure for constructing
+simultaneous confidence intervals for multinomial populations. It is more
+or less a direct translation of the source code used to implement the
+"MultinomialCI" R package (source code: https://github.com/cran/MultinomialCI),
+which itself was a R-based implementation of a SAS package coded by
+May and Johnson (see https://www.jstatsoft.org/article/view/v005i06). 
+
+PLEASE NOTE THAT THE R PACKAGE HAS A MINOR BUG, which I will be reporting
+to the owner of the above GitHub repo. 
+
+Created by: Brian Canada, PhD (bcanada@uscb.edu)
+Date of original commit: 31 July 2019
 """
 
 import numpy as np
