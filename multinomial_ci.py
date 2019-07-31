@@ -3,7 +3,7 @@
 multinomial_ci.py
 
 This is a Python implementation of the Sison-Glaz procedure for constructing
-simultaneous confidence intervals for multinomial populations. It is more
+simultaneous confidence intervals for multinomial proportions. It is more
 or less a direct translation of the source code used to implement the
 "MultinomialCI" R package (source code: https://github.com/cran/MultinomialCI),
 which itself was a R-based implementation of a SAS package coded by
