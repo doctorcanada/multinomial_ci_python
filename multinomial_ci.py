@@ -55,7 +55,7 @@ def moments(c, _lambda):
 
 def truncpoi(c,x,n,k):
     m=np.zeros((k,5))       
-    for i in range(k):      #
+    for i in range(k):      
         _lambda=x[i]
         mom = moments( c, _lambda )
         for j in range(5):
@@ -72,7 +72,7 @@ def truncpoi(c,x,n,k):
     s3 = s[2]
     s4 = s[3]
     probn=1/(stats.poisson.cdf(n,n)-stats.poisson.cdf(n-1,n)) 
-    z=(n-s1)/np.sqrt(s2) # ok
+    z=(n-s1)/np.sqrt(s2) 
     g1=s3/(s2**(3/2))
     g2=s4/(s2**2)
     poly = 1 + g1*(z**3-3*z)/6 + g2*(z**4-6*z**2+3)/24 + g1**2*(z**6-15*z**4+45*z**2-15)/72
@@ -99,7 +99,6 @@ def sison(x,alpha,verbose=False):
     
     salida = np.zeros((k,2))
     delta = (1-alpha-pold)/(p-pold)
-    #print(delta)
     out = np.zeros((k,5))
     num = np.zeros((k,1))
     c = c-1
