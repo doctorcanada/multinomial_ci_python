@@ -27,8 +27,9 @@ May, W., & Johnson, W. (2000). Constructing two-sided simultaneous confidence
 R package for MultinomialCI, by P. Villacorta:
 https://cran.r-project.org/package=MultinomialCI
    
-PLEASE NOTE THAT THE R PACKAGE HAS A MINOR BUG which has been reported
-to the original package author.
+PLEASE NOTE THAT THE R PACKAGE HAS A MINOR LOGIC ERROR which has been reported
+to the original package author. The logic error has been corrected in this
+Python version.
 
 Created by: Brian Canada, PhD (bcanada@uscb.edu)
 Date of original commit: 31 July 2019
