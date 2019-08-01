@@ -8,7 +8,8 @@ prepared by Dr. Pablo Villacorta), which itself was an R-based implementation
 of a SAS package coded by May and Johnson (2000).
 An example usage is provided in the definition of the "main" function at
 the bottom of this script.
-References
+
+# References
 ----------
 Sison, C. &  Glaz, J. (1995). Simultaneous Confidence Intervals and 
    Sample Size Determination for Multinomial Proportions, Journal of the 
