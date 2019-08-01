@@ -28,5 +28,5 @@ PLEASE NOTE THAT THE R PACKAGE HAS A MINOR BUG which has been reported
 to the original package author.
 
 ## Created by
-Brian Canada, PhD (bcanada@uscb.edu)
+Brian Canada, PhD (bcanada@uscb.edu) 
 Date of original commit: 31 July 2019
