@@ -1,20 +1,29 @@
-# -*- coding: utf-8 -*-
 """
 multinomial_ci.py
 
-This is a Python implementation of the Sison-Glaz (1995) procedure for constructing
-simultaneous confidence intervals for multinomial proportions. It is more
-or less a direct translation of the source code used to implement the
-"MultinomialCI" R package (source code: https://github.com/cran/MultinomialCI),
+This is a Python implementation of the Sison-Glaz (1995) method for 
+constructing simultaneous confidence intervals for multinomial proportions. 
+This is a translation of the source code used to implement the "MultinomialCI" 
+R package (source code: https://github.com/cran/MultinomialCI),
 which itself was a R-based implementation of a SAS package coded by
-May and Johnson (see https://www.jstatsoft.org/article/view/v005i06).
+May and Johnson (2000).
 
-Original source:
-----------------
-Cristina P. Sison & Joseph Glaz (1995) Simultaneous Confidence Intervals and Sample 
-   Size Determination for Multinomial Proportions, Journal of the American Statistical 
-   Association, 90:429, 366-369, DOI: 10.1080/01621459.1995.10476521
+An example usage is provided in the definition of the "main" function at
+the bottom of this script.
 
+References
+----------
+Sison, C. &  Glaz, J. (1995). Simultaneous Confidence Intervals and 
+   Sample Size Determination for Multinomial Proportions, Journal of the 
+   American Statistical Association, 90:429, 366-369, 
+   DOI: 10.1080/01621459.1995.10476521
+   
+May, W., & Johnson, W. (2000). Constructing two-sided simultaneous confidence 
+   intervals for multinomial proportions for small counts in a large number of 
+   cells. Journal of Statistical Software, 5:6, 1-24. 
+   doi:http://dx.doi.org/10.18637/jss.v005.i06
+   [Online: , see https://www.jstatsoft.org/article/view/v005i06]
+   
 PLEASE NOTE THAT THE R PACKAGE HAS A MINOR BUG, which I will be reporting
 to the owner of the above GitHub repo. 
 
@@ -134,5 +143,52 @@ def sison(x,alpha,verbose=False):
         salida[i,0] = out[i,1]
         salida[i,1] = out[i,2]
     # end for
+    
+    # prepare verbose output similar to SAS and R versions
+    c1=['PROPORTION', 'LOWER(SG)','UPPER(SG)','LOWER(C+1)','UPPER(C+1)']
+    cov=100*(1-alpha);
+    sg=(x+delta)/n;
+    c2='SG-midpoint';
+    if verbose == True:
+        print('-------------------------------------------------------------')
+        print('      ',int(cov),'% SIMULTANEOUS CONFIDENCE INTERVALS');
+        print('       BASED ON THE METHODS OF SISON AND GLAZ');
+        print('-------------------------------------------------------------')
+        print() # blank line for readability
+        print('C = ',c)
+        print('P(c+1) = ',f'{p:.10f}')
+        print('P(c)   = ',f'{pold:.10f}')
+        print('delta =  ',f'{delta:.10f}')
+        print('Volume(SG) = ',f'{vol1:.10f}')
+        print('Volume(C+1)= ',f'{vol2:.10f}')
+        print() # blank line for readability
+        for header in c1:
+            print(header, end='\t')
+        # end for
+        print() # newline
+        for out_row in out:
+            for out_col in out_row:
+                print(f'{out_col:.10f}', end='\t')
+            # end inner for
+            print()
+        # end outer for
+        print() # blank line for readability       
+        print(c2)
+        for value in sg:
+            print(f'{value:.10f}')
+        # end for
+        print() # blank line for readability
+    # end if
     return salida
-# end def sison(x,alpha,verbose=False)
+# end def sison(x,alpha,verbose)
+
+""" 
+main function provided for example usage and testing 
+(here, same input vector as that used in the May & Johnson SAS implementation)
+"""
+def main():
+    x = np.array([56, 72, 73, 59, 62, 87, 58])
+    sison(x, 0.05, verbose=True)
+
+if __name__ == "__main__":
+    main()
