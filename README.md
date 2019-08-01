@@ -9,8 +9,7 @@ of a SAS package coded by May and Johnson (2000).
 An example usage is provided in the definition of the "main" function at
 the bottom of this script.
 
-# References
-----------
+## References
 Sison, C. &  Glaz, J. (1995). Simultaneous Confidence Intervals and 
    Sample Size Determination for Multinomial Proportions, Journal of the 
    American Statistical Association, 90:429, 366-369, 
@@ -28,5 +27,6 @@ https://cran.r-project.org/package=MultinomialCI
 PLEASE NOTE THAT THE R PACKAGE HAS A MINOR BUG which has been reported
 to the original package author.
 
-Created by: Brian Canada, PhD (bcanada@uscb.edu)
+## Created by
+Brian Canada, PhD (bcanada@uscb.edu)
 Date of original commit: 31 July 2019
