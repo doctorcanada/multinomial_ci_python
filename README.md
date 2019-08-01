@@ -19,7 +19,7 @@ May, W., & Johnson, W. (2000). Constructing two-sided simultaneous confidence
    intervals for multinomial proportions for small counts in a large number of 
    cells. Journal of Statistical Software, 5:6, 1-24. 
    doi:http://dx.doi.org/10.18637/jss.v005.i06
-   [Online: , see https://www.jstatsoft.org/article/view/v005i06]
+   [Online: see https://www.jstatsoft.org/article/view/v005i06]
    
 R package for MultinomialCI, by P. Villacorta:
 https://cran.r-project.org/package=MultinomialCI
